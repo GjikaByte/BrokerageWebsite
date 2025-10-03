@@ -47,7 +47,6 @@ export default function NfFooter() {
           </div>
         </div>
 
-        {/* Service code & copy */}
         <button className="btn btn-outline-secondary btn-sm mt-3">Service Code</button>
         <div className="small mt-2">&copy; 2025 Netflix, Inc.</div>
       </div>
