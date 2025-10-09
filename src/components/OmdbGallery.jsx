@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Spinner, Alert, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import MovieThumb from './MovieThumb.jsx';
 
 const API_KEY = '96893dbc';
@@ -10,10 +11,7 @@ function dedupeMovies(arr = []) {
   const out = [];
   for (const m of arr) {
     const key = (m.imdbID || `${m.Title}|${m.Year}`).toLowerCase();
-    if (!seen.has(key)) {
-      seen.add(key);
-      out.push(m);
-    }
+    if (!seen.has(key)) { seen.add(key); out.push(m); }
   }
   return out;
 }
@@ -26,31 +24,23 @@ export default function OmdbGallery({ title, query }) {
 
   useEffect(() => {
     let abort = false;
-
-    async function load() {
+    (async () => {
       if (!query) return;
-      setLoading(true);
-      setErr('');
+      setLoading(true); setErr('');
       try {
         const res = await fetch(
           `${ENDPOINT}?apikey=${API_KEY}&type=movie&s=${encodeURIComponent(query)}`
         );
         const data = await res.json();
         if (abort) return;
-
-        if (data.Response === 'True') {
-          setItems(data.Search || []);
-        } else {
-          setErr(data.Error || 'Nessun risultato');
-        }
+        if (data.Response === 'True') setItems(data.Search || []);
+        else setErr(data.Error || 'Nessun risultato');
       } catch (e) {
         if (!abort) setErr(e.message || 'Errore di rete');
       } finally {
         if (!abort) setLoading(false);
       }
-    }
-
-    load();
+    })();
     return () => { abort = true; };
   }, [query]);
 
@@ -59,7 +49,6 @@ export default function OmdbGallery({ title, query }) {
   return (
     <section className="rows-wrapper bg-black text-white">
       <div className="container-fluid px-3 px-md-4">
-
         <div className="d-flex align-items-center justify-content-between">
           <h6 className="row-title m-0">{title}</h6>
           <Form.Check
@@ -82,8 +71,14 @@ export default function OmdbGallery({ title, query }) {
 
         {!loading && !err && (
           <div className="carousel-row d-flex flex-nowrap overflow-auto pb-3">
-            {list.map(movie => (
-              <MovieThumb key={movie.imdbID || `${movie.Title}-${movie.Year}`} movie={movie} />
+            {list.map((movie) => (
+              <Link
+                to={`/movie-details/${movie.imdbID}`}   // match your param route
+                key={movie.imdbID || `${movie.Title}-${movie.Year}`}
+                className="me-2 text-decoration-none"
+              >
+                <MovieThumb movie={movie} />
+              </Link>
             ))}
           </div>
         )}

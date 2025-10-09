@@ -24,7 +24,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tv-shows" element={<TVShows />} />
-        {/* <Route path="/movie-details/:movieId" element={<MovieDetails />} /> */}
+        <Route path="/movie-details/:movieId" element={<MovieDetails />} />
       </Routes>
       <NfFooter />
     </>

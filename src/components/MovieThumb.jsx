@@ -5,13 +5,7 @@ export default function MovieThumb({ movie }) {
       : 'https://via.placeholder.com/240x135?text=No+Poster';
 
   return (
-    <a
-      href={`https://www.imdb.com/title/${movie.imdbID}`}
-      target="_blank"
-      rel="noreferrer"
-      className="d-block position-relative " 
-      title={movie.Title}
-    >
+    <p>
       <img
         src={poster}
         alt={movie.Title}
@@ -19,6 +13,6 @@ export default function MovieThumb({ movie }) {
         style={{ objectFit: 'cover', width: "160px" }}
       />
       <span className="badge-new">{movie.Year}</span>
-    </a>
+    </p>
   );
 }
