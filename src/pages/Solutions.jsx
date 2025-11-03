@@ -3,12 +3,12 @@ import React from "react";
 export const Solutions = () => {
   const solutions = [
     {
-      title: "Energy Attribute Certificates (EACs)",
-      description: "Certifichi che l’energia consumata proviene da fonti rinnovabili, aiutando a ridurre le emissioni Scope 2.",
-      keyBenefit: "Riduci le emissioni Scope 2 e dimostra il tuo impegno per l’energia pulita.",
+      title: "Carbon Credits",
+      description: "Credito di carbonio che consente di compensare emissioni non evitabili mediante progetti certificati.",
+      keyBenefit: "Compensazione delle emissioni residue verso il target net-zero.",
       linkText: "Scopri di più",
       linkHref: "#",
-      scope: ["Scope 2"]
+      scope: ["Scope 1", "Scope 2"]
     },
     {
       title: "Power Purchase Agreements (PPA/GPA)",
@@ -33,14 +33,6 @@ export const Solutions = () => {
       linkText: "Scopri di più",
       linkHref: "#",
       scope: ["Scope 1", "Scope 3"]
-    },
-    {
-      title: "Carbon Credits",
-      description: "Credito di carbonio che consente di compensare emissioni non evitabili mediante progetti certificati.",
-      keyBenefit: "Compensazione delle emissioni residue verso il target net-zero.",
-      linkText: "Scopri di più",
-      linkHref: "#",
-      scope: ["Scope 1", "Scope 2"]
     },
   ];
 

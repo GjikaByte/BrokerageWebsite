@@ -60,6 +60,19 @@ body {
   max-width: 64px;
   height: auto;
 }
+
+.nav-links img {
+  max-width: 27px;
+  margin-left: 50px;
+  height: 15px;
+}
+
+.nav-links img.uk {
+  max-width: 27px;
+  margin-left: 10px;
+  height: 15px;
+}
+
 .brand-title {
   font-weight: 800;
   font-size: 1.2rem;
@@ -83,7 +96,8 @@ body {
 }
 
 /* MAIN */
-.main {
+.main,
+.mainEsp {
   max-width: 1150px;
   margin: 40px auto;
   padding: 20px;
