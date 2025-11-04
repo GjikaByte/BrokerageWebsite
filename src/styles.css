@@ -64,6 +64,19 @@ body {
 
 /* NAVBAR */
 /* 🌍 UNIVERSAL LOGO STYLING (applies to all languages) */
+
+.nav {
+  position: sticky;        /* stays fixed as you scroll */
+  top: 0;                  /* sticks to top */
+  width: 100%;             /* spans the entire screen */
+  z-index: 9999;           /* stays above everything else */
+  background: rgba(10, 13, 16, 0.85);  /* subtle transparency */
+  backdrop-filter: blur(10px);         /* soft background blur */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease;
+}
+
+
 .nav .logo img,
 .navEsp .logo img,
 .navEn .logo img {
