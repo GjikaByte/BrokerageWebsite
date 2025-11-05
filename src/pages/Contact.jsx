@@ -14,7 +14,7 @@ export const Contact = () => {
       `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
     );
 
-    window.location.href = `mailto:andi.gjika@ultracert.it.?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:andi.gjika@europeflow.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -23,7 +23,7 @@ export const Contact = () => {
 
       <p>
         Per richieste commerciali o informazioni:{" "}
-        <strong>andi.gjika@ultracert.it.</strong>
+        <strong>andi.gjika@europeflow.com</strong>
       </p>
 
       <form className="contact-form" onSubmit={handleSubmit}>
