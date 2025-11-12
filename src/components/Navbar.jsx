@@ -71,6 +71,7 @@ export const Navbar = ({ onNavigate, onLangChange, currentLang }) => {
 
   return (
     <header className="nav">
+      <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
       <div className="nav-inner">
         <div className="brand" onClick={() => onNavigate("home")}>
           <div className="logo">
