@@ -6,7 +6,7 @@ export const About = () => {
       <h2>Chi siamo</h2>
 
       <p>
-        Europe Flow è una società indipendente attiva nel trading e nella fornitura di soluzioni ambientali nei mercati della transizione energetica. Operiamo come partner di fiducia per aziende e istituzioni che desiderano ridurre le proprie emissioni, promuovere la sostenibilità e accedere in modo efficiente ai mercati ambientali globali.
+        è una società indipendente attiva nel trading e nella fornitura di soluzioni ambientali nei mercati della transizione energetica. Operiamo come partner di fiducia per aziende e istituzioni che desiderano ridurre le proprie emissioni, promuovere la sostenibilità e accedere in modo efficiente ai mercati ambientali globali.
       </p>
 
       <p>
