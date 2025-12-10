@@ -46,7 +46,7 @@ export const SolutionsEn = () => {
 
       <h2>Our Solutions</h2>
       <p className="intro">
-        The path toward the energy transition requires effective tools. Here are the solutions we provide to support your sustainability strategy.
+        The path toward the energy transition requires effective tools. Here are the solutions we can support with for your sustainability strategy.
       </p>
 
       <div className="solutions-grid">

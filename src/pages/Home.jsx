@@ -7,8 +7,7 @@ export const Home = () => {
         <div className="hero-text">
           <h1>Trading e consulenza per la transizione energetica</h1>
           <p>
-            Operiamo nei mercati delle materie prime ambientali e degli strumenti legati alla transizione energetica,
-            offrendo servizi di trading, intermediazione e fornitura di liquidità per crediti di carbonio, EAC, PPA/GPA, biometano e altro.
+           Operiamo nei mercati delle materie prime ambientali e degli strumenti legati alla transizione energetica, offrendo servizi di consulenza, intermediazione strategica e supporto alla gestione della liquidità per crediti di carbonio, EAC, PPA/GPA, biometano e altro.
           </p>
           <div className="cta-row">
             <a

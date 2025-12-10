@@ -45,7 +45,7 @@ export const Solutions = () => {
 
       <h2>Le nostre Soluzioni</h2>
       <p className="intro">
-        Il percorso verso la transizione energetica richiede strumenti efficaci. Ecco le soluzioni che mettiamo a disposizione per supportare la vostra strategia di sostenibilità.
+        Il percorso verso la transizione energetica richiede strumenti efficaci. Ecco le soluzioni che coadiuviamo per supportare la vostra strategia di sostenibilità.
       </p>
 
       <div className="solutions-grid">
