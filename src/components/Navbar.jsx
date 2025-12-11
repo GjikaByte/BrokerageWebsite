@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../assets/Logo3.png";
 import espFlag from "../assets/espFlag.png";
 import itFlag from "../assets/itFlag.png";
@@ -10,20 +10,78 @@ export const Navbar = ({ onNavigate, onLangChange, currentLang }) => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
+  const getHomeHash = () => {
+    if (currentLang === "it") return "#home";
+    if (currentLang === "es") return "#homeEsp";
+    if (currentLang === "en") return "#homeEn";
+    return "#home";
+  };
+
+  useEffect(() => {
+    const hash = window.location.hash.toLowerCase();
+
+    if (hash === "" || hash === "#") {
+      window.location.hash = getHomeHash();
+      return;
+    }
+
+    if (hash === "#en") {
+      onLangChange("en");
+      window.location.hash = "#homeEn";
+      return;
+    }
+
+    if (hash === "#es") {
+      onLangChange("es");
+      window.location.hash = "#homeEsp";
+      return;
+    }
+
+    if (hash === "#it") {
+      onLangChange("it");
+      window.location.hash = "#home";
+      return;
+    }
+  }, []);
+
   const LangFlags = ({ exclude }) => (
     <>
       {exclude !== "it" && (
-        <a href="#home" onClick={(e) => { e.preventDefault(); onLangChange("it"); closeMenu(); }}>
+        <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            onLangChange("it");
+            window.location.hash = "#home";
+            closeMenu();
+          }}
+        >
           <img src={itFlag} alt="Italiano" className="lang-flag" />
         </a>
       )}
       {exclude !== "es" && (
-        <a href="#homeEsp" onClick={(e) => { e.preventDefault(); onLangChange("es"); closeMenu(); }}>
+        <a
+          href="#homeEsp"
+          onClick={(e) => {
+            e.preventDefault();
+            onLangChange("es");
+            window.location.hash = "#homeEsp";
+            closeMenu();
+          }}
+        >
           <img src={espFlag} alt="Español" className="lang-flag" />
         </a>
       )}
       {exclude !== "en" && (
-        <a href="#homeEn" onClick={(e) => { e.preventDefault(); onLangChange("en"); closeMenu(); }}>
+        <a
+          href="#homeEn"
+          onClick={(e) => {
+            e.preventDefault();
+            onLangChange("en");
+            window.location.hash = "#homeEn";
+            closeMenu();
+          }}
+        >
           <img src={ukFlag} alt="English" className="lang-flag" />
         </a>
       )}
@@ -33,7 +91,15 @@ export const Navbar = ({ onNavigate, onLangChange, currentLang }) => {
   const NavLinks = ({ links }) => (
     <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
       {links.map((l, i) => (
-        <a key={i} href={l.href} onClick={closeMenu}>{l.label}</a>
+        <a
+          key={i}
+          href={l.href}
+          onClick={(e) => {
+            closeMenu();
+          }}
+        >
+          {l.label}
+        </a>
       ))}
       <LangFlags exclude={currentLang} />
     </nav>
@@ -72,7 +138,13 @@ export const Navbar = ({ onNavigate, onLangChange, currentLang }) => {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <div className="brand" onClick={() => onNavigate("home")}>
+        <div
+          className="brand"
+          onClick={() => {
+            window.location.hash = getHomeHash();
+            onNavigate("home");
+          }}
+        >
           <div className="logo">
             <img src={Logo} alt="Europe Flow logo" />
           </div>
