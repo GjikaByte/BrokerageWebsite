@@ -6,7 +6,7 @@ export const HomeEn = () => {
     <section className="page home">
       <div className="hero">
         <div className="hero-text">
-          <h1>Trading and consultancy for the energy transition</h1>
+          <h1>Consultancy for the energy transition</h1>
           <p>
             We operate in the markets for environmental raw materials and instruments related to the energy transition, offering consulting services, strategic brokerage, and liquidity management support for carbon credits, EACs, PPAs/GPAs, biomethane, and more.
           </p>

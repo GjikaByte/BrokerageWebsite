@@ -5,7 +5,7 @@ export const HomeEsp = () => {
     <section className="page home">
       <div className="hero">
         <div className="hero-text">
-          <h1>Trading y consultoría para la transición energética</h1>
+          <h1>Consultoría para la transición energética</h1>
           <p>
            Operamos en los mercados de materias primas ambientales y en los instrumentos relacionados con la transición energética, ofreciendo servicios de consultoría, intermediación estratégica y apoyo en la gestión de la liquidez para créditos de carbono, EAC, PPA/GPA, biometano y otros.
           </p>
