@@ -12,7 +12,7 @@ export const SolutionsEn = () => {
     },
     {
       title: "Power Purchase Agreements (PPA/GPA)",
-      description: "Contratos a largo plazo con generadores de energía rLong-term contracts with renewable energy generators to ensure stable and sustainable supplies.enovable para garantizar suministros estables y sostenibles.",
+      description: "Long-term contracts with renewable energy generators to ensure stable and sustainable supplies.enovable para garantizar suministros estables y sostenibles.",
       keyBenefit: "Cost stability and development of renewable infrastructures.",
       linkText: "Discover more",
       linkHref: "#",
